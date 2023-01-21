@@ -15,7 +15,7 @@ describe('Login/ Logout Test', () => {
     });
 
     it('should display error message', () => {
-        cy.get('.alert-error').should('be.visible').and('contain', 'Login and/or password are wrong.')
+        cy.get('.alert-error').should('be.visible').and('contain.text', 'Login and/or password are wrong.')
     });
 
     it('should login to application with valid data', () => {
@@ -28,7 +28,7 @@ describe('Login/ Logout Test', () => {
             cy.get('#user_password').clear()
             cy.get('#user_password').type('password')
             cy.get('input[name="submit"]').click()
-            cy.get('a').should('contain.text', 'Zero Bank')
+            cy.get('h2').should('contain.text', 'Zero Bank')
         })
     });
 
