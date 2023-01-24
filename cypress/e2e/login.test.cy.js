@@ -27,8 +27,13 @@ describe('Login/ Logout Test', () => {
             cy.get('#user_login').type('username')
             cy.get('#user_password').clear()
             cy.get('#user_password').type('password')
+<<<<<<< HEAD
             cy.get('.btn').click()
             cy.get('h2').should('contain.text', 'Cash Accounts Login')
+=======
+            cy.get('input[name="submit"]').click()
+            cy.get('h2').should('contain.text', 'Zero Bank')
+>>>>>>> 9563d5332006830ca9470a7ce4cba0d5b0be9a17
         })
     });
 
