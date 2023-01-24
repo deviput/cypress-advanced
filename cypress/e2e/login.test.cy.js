@@ -11,11 +11,11 @@ describe('Login/ Logout Test', () => {
         cy.get('#login_form').should('be.visible')
         cy.get('#user_login').type('invalid username')
         cy.get('#user_password').type('invalid password')
-        cy.get('input[name="submit"]').click()
+        cy.get('.btn').click()
     });
 
     it('should display error message', () => {
-        cy.get('.alert-error').should('be.visible').and('contain', 'Login and/or password are wrong.')
+        cy.get('.alert-error').should('be.visible').and('contain.text', 'Login and/or password are wrong.')
     });
 
     it('should login to application with valid data', () => {
@@ -27,8 +27,8 @@ describe('Login/ Logout Test', () => {
             cy.get('#user_login').type('username')
             cy.get('#user_password').clear()
             cy.get('#user_password').type('password')
-            cy.get('input[name="submit"]').click()
-            cy.get('a').should('contain.text', 'Zero Bank')
+            cy.get('.btn').click()
+            cy.get('h2').should('contain.text', 'Cash Accounts Login')
         })
     });
 
